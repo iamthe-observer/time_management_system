@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { ref, shallowRef } from 'vue';
+import { shallowRef } from 'vue';
 import Login from '../components/Login.vue';
+import Register from '../components/Register.vue';
+import 'animate.css';
 
-let currContent = shallowRef(Login);
+let currContent: object = shallowRef(Login);
+
 // type alias
 // type StringOrNum = string | number;
 // type ObjWithName = { name: string; uid: StringOrNum };
@@ -39,14 +42,26 @@ let currContent = shallowRef(Login);
 </script>
 
 <template>
-  <div
-    class="flex-1 p-3 border-none rounded-3xl [max-height:100%] flex items-center justify-center gap-3"
-  >
-    <div
-      class="absolute bg-[#a6d1e68c] w-[40%] h-screen top-0 left-0 bottom-0 rounded-tr-lg rounded-br-lg"
-    ></div>
-    <keep-alive>
-      <component :is="currContent" />
-    </keep-alive>
+  <div class="flex-1 rounded-lg max-h-full relative">
+    <div class="w-full h-full bg-gradient-to-br from-prime to-sec">
+      <img
+        src="../assets/images/anton-maksimov-5642-su-wrkNQmhmdvY-unsplash.jpg"
+        class="object-cover opacity-60 w-full h-full"
+      />
+    </div>
+    <Transition
+      enter-active-class=" animate__animated animate__fadeIn animate__faster"
+      leave-active-class="animate__animated animate__fadeOut animate__faster"
+      name="custom-classes"
+      mode="out-in"
+    >
+      <div class="absolute inset-0 ml-20">
+        <component
+          @register="currContent = Register"
+          @login="currContent = Login"
+          :is="currContent"
+        />
+      </div>
+    </Transition>
   </div>
 </template>

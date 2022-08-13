@@ -1,30 +1,37 @@
 <script setup lang="ts">
 import { useVuelidate } from '@vuelidate/core';
-import { required, email, minLength } from '@vuelidate/validators';
+import { required, email, minLength, sameAs } from '@vuelidate/validators';
 import { reactive, computed } from 'vue';
 import InputField from './InputField.vue';
 import Button from 'primevue/button';
 
-const loginData: any = reactive({
+const registerData: any = reactive({
   email: null,
-  password: null,
+  password: { password: null, confirm: null },
 });
 
 const rules = computed(() => {
   return {
     email: { required, email },
-    password: { required, minLength: minLength(8) },
+    password: {
+      password: { required, minLength: minLength(8) },
+      confirm: {
+        required,
+        minLength: minLength(8),
+        sameAs: sameAs(registerData.password.password),
+      },
+    },
   };
 });
 
-const v$l = useVuelidate(rules, loginData);
+const v$ = useVuelidate(rules, registerData);
 
 const submitForm = async () => {
-  let val: any = await v$l.value.$validate();
+  let val: any = await v$.value.$validate();
   console.log(val);
 
   if (!val) {
-    v$l.value.$errors.forEach(err => {
+    v$.value.$errors.forEach(err => {
       alert(err.$message);
     });
   } else {
@@ -32,9 +39,9 @@ const submitForm = async () => {
   }
 };
 
-const emit = defineEmits(['register']);
-let go2register = () => {
-  emit('register');
+const emits = defineEmits(['login']);
+let go2login = () => {
+  emits('login');
 };
 </script>
 
@@ -58,7 +65,7 @@ let go2register = () => {
     >
       <div class="flex flex-col gap-2 w-full">
         <InputField
-          v-model="loginData.email"
+          v-model="registerData.email"
           :type="`text`"
           :label-class="'w-full text-sm'"
           ><template #label>
@@ -66,21 +73,30 @@ let go2register = () => {
           </template></InputField
         >
         <InputField
-          v-model="loginData.password"
+          v-model="registerData.password.password"
           :type="`password`"
           :label-class="'w-full text-sm'"
           ><template #label>
             <h5 class="font-bold w-full ml-2 text-gray-400">Password</h5>
           </template></InputField
         >
+        <InputField
+          v-model="registerData.password.confirm"
+          :type="`password`"
+          :label-class="'w-full text-sm'"
+          ><template #label>
+            <h5 class="font-bold w-full ml-2 text-gray-400">
+              Confirm Password
+            </h5>
+          </template></InputField
+        >
       </div>
       <Button
         class="rounded-full bg-prime w-full h-[40px] mt-4"
         @click.prevent="submitForm()"
-        label="Login"
+        label="Signup"
       />
-      <span class="text-prime text-xs">Forget password?</span>
-      <span @click="go2register" class="text-md mt-3">Wanna Signup?</span>
+      <span @click="go2login" class="text-md mt-3">Login Here</span>
     </form>
   </div>
 </template>

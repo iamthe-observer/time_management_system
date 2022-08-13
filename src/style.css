@@ -1,6 +1,15 @@
+@import '../node_modules/primevue/resources/primevue.min.css';
+@import '../node_modules/primevue/resources/themes/lara-light-purple/theme.css';
+@import '../node_modules/primeicons/primeicons.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+    html {
+        font-family: Outfit, system-ui, sans-serif;
+    }
+}
+
 :root {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -46,7 +55,20 @@ button:focus-visible {
 
 #app {
     /* max-width: 1280px; */
-    text-align: center;
     width: 100%;
     min-height: 100%;
+}
+
+.fade-enter-from,
+.fade-leave-to,
+.shade-enter-from,
+.shade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active,
+.shade-enter-active,
+.shade-leave-active {
+    transition: opacity 200ms ease-out;
 }
