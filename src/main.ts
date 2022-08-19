@@ -5,11 +5,13 @@ import router from './router/router';
 import { createPinia } from 'pinia';
 import PrimeVue from 'primevue/config';
 import 'animate.css';
+import VCalendar from 'v-calendar';
 
 const app = createApp(App);
 const pinia = createPinia();
 
 app.use(pinia);
+app.use(VCalendar, {});
 app.use(PrimeVue);
 app.use(router);
 app.mount('#app');

@@ -66,8 +66,11 @@ let go2login = () => {
       <div class="flex flex-col gap-2 w-full">
         <InputField
           v-model="registerData.email"
-          :type="`text`"
-          :label-class="'w-full text-sm'"
+          type="text"
+          label-class="w-full text-sm"
+          holder=""
+          :icon-class="null"
+          styling=""
           ><template #label>
             <h5 class="font-bold w-full ml-2 text-gray-400">Email</h5>
           </template></InputField
@@ -76,6 +79,9 @@ let go2login = () => {
           v-model="registerData.password.password"
           :type="`password`"
           :label-class="'w-full text-sm'"
+          styling="rounded-full"
+          holder=""
+          :icon-class="null"
           ><template #label>
             <h5 class="font-bold w-full ml-2 text-gray-400">Password</h5>
           </template></InputField
@@ -84,6 +90,9 @@ let go2login = () => {
           v-model="registerData.password.confirm"
           :type="`password`"
           :label-class="'w-full text-sm'"
+          styling="rounded-full"
+          holder="hello"
+          :icon-class="null"
           ><template #label>
             <h5 class="font-bold w-full ml-2 text-gray-400">
               Confirm Password

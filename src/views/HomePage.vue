@@ -5,6 +5,7 @@ import { ref } from 'vue';
 <template>
   <div class="w-full h-full flex justify-center gap-2 items-center">
     <button class="" @click="$router.push('/dashboard')">Dashboard</button>
+    <button class="" @click="$router.push('/dashboardv2')">Dashboardv2</button>
     <button class="" @click="$router.push('/authorize')">Authorize</button>
   </div>
 </template>

@@ -10,8 +10,14 @@
     }
 }
 
+@layer components {
+    .navlink {
+        @apply filter rounded-xl p-2 w-12 aspect-square bg-opacity-0;
+    }
+}
+
 :root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Outfit, Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;

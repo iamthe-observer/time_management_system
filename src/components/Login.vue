@@ -5,7 +5,13 @@ import { reactive, computed } from 'vue';
 import InputField from './InputField.vue';
 import Button from 'primevue/button';
 
-const loginData: any = reactive({
+type StringNull = string | null;
+interface UserLogin {
+  email: StringNull;
+  password: StringNull;
+}
+
+const loginData: UserLogin = reactive({
   email: null,
   password: null,
 });
@@ -32,7 +38,12 @@ const submitForm = async () => {
   }
 };
 
-const emit = defineEmits(['register']);
+interface registerEmit {
+  (e: 'register'): void;
+}
+// const emit = defineEmits(['register']);
+const emit = defineEmits<registerEmit>();
+
 let go2register = () => {
   emit('register');
 };
@@ -59,16 +70,22 @@ let go2register = () => {
       <div class="flex flex-col gap-2 w-full">
         <InputField
           v-model="loginData.email"
-          :type="`text`"
-          :label-class="'w-full text-sm'"
+          type="text"
+          label-class="w-full text-sm"
+          styling="rounded-full"
+          holder=""
+          :icon-class="null"
           ><template #label>
             <h5 class="font-bold w-full ml-2 text-gray-400">Email</h5>
           </template></InputField
         >
         <InputField
           v-model="loginData.password"
-          :type="`password`"
-          :label-class="'w-full text-sm'"
+          type="password"
+          label-class="w-full text-sm"
+          styling="rounded-full"
+          holder=""
+          :icon-class="null"
           ><template #label>
             <h5 class="font-bold w-full ml-2 text-gray-400">Password</h5>
           </template></InputField
