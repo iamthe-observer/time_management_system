@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="p-3">
+  <aside class="p-3">
     <div
       class="w-20 h-full flex flex-col justify-center relative bg-prime rounded-xl"
     >
@@ -79,5 +79,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </aside>
 </template>
