@@ -29,11 +29,12 @@
         </div>
       </header>
 
-      <div class="taskslist w-full mt-6">
+      <div
+        class="taskslist w-full mt-6 overflow-y-scroll overflow-hidden h-full"
+      >
         <TasksList :tasks_data="tasks" />
       </div>
     </div>
-
     <div class="taskstype__list w-[30%]"></div>
   </main>
 </template>
@@ -41,7 +42,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import TasksList from '../components/TasksList.vue';
-import TasksData from '../interfaces/TasksData';
-
-const tasks = ref<TasksData[] | null>(null);
+import { tasks } from './testdata';
 </script>

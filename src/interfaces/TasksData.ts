@@ -1,8 +1,8 @@
 export enum TaskType {
-  MyDay,
-  Important,
-  Planned,
-  Completed,
+  MyDay = 'My Day',
+  Important = 'Important',
+  Planned = 'Planned',
+  Completed = 'Completed',
 }
 
 export default interface TasksData {

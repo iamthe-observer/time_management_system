@@ -1,5 +1,5 @@
 <template>
-  <div class="m-2 cursor-pointer">
+  <div class="cursor-pointer w-6">
     <svg
       v-if="!checked.state.value"
       @click="handleToggle"
