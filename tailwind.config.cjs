@@ -1,49 +1,54 @@
 module.exports = {
-    content: ['./index.html', './src/**/*.{html,vue,js,ts,jsx,tsx}'],
-    theme: {
-        extend: {
-            spacing: {
-                13: '130px',
-                15: '60px',
-            },
-            colors: {
-                prime: '#bf00ff',
-                primePastel: '#e7affa',
-                primeTrans: '#bf00ff80',
-                sec: '#00ffd0',
-                secPastel: '#c9fff5',
-                secTrans: '#00ffd080',
-                light: '#FEFBF6',
-                dark: '#3D3C42',
-                grey: '#f7f7f7',
-                lightgrey: '#fafafa',
-            },
+  content: ['./index.html', './src/**/*.{html,vue,js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      transitionDuration: {
+        2000: '2000ms',
+      },
+      spacing: {
+        13: '130px',
+        15: '60px',
+      },
+      colors: {
+        prime: '#bf00ff',
+        primePastel: '#e7affa',
+        primeTrans: '#bf00ff80',
+        sec: '#00ffd0',
+        secPastel: '#c9fff5',
+        secTrans: '#00ffd080',
+        light: '#FEFBF6',
+        dark: '#3D3C42',
+        grey: '#f7f7f7',
+        lightgrey: '#fafafa',
+      },
+    },
+  },
+  daisyui: {
+    styled: true,
+    themes: [
+      {
+        mytheme: {
+          primary: '#bf00ff',
+          secondary: '#00ffd0',
+          accent: '#6419e6',
+          neutral: '#e0e0e0',
+          base100: '#3D3C42',
+          info: '#3abff8',
+          success: '#36d399',
+          warning: '#fbbd23',
+          error: '#f87272',
         },
-    },
-    daisyui: {
-        styled: true,
-        themes: [{
-            mytheme: {
-                primary: '#bf00ff',
-                secondary: '#00ffd0',
-                accent: '#6419e6',
-                neutral: '#e0e0e0',
-                base100: '#3D3C42',
-                info: '#3abff8',
-                success: '#36d399',
-                warning: '#fbbd23',
-                error: '#f87272',
-            },
-        }, ],
-        base: true,
-        utils: true,
-        logs: true,
-        rtl: false,
-        prefix: '',
-        darkTheme: 'dark',
-    },
-    plugins: [require('daisyui')],
-}; // colors: {
+      },
+    ],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: '',
+    darkTheme: 'dark',
+  },
+  plugins: [require('daisyui')],
+} // colors: {
 //     prime: '#4e80ec',
 //     primeTrans: '#4e80ec80',
 //     sec: '#A6D1E6',

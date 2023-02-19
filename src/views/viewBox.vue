@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full w-full p-3">
-    <slot name="body"></slot>
+  <div class="flex h-full w-full">
+    <slot></slot>
   </div>
 </template>

@@ -89,11 +89,21 @@
 </template>
 
 <script setup lang="ts">
-import { useToggleState } from '../composables/useToggleState';
+import { onMounted } from 'vue'
+import { useToggleState } from '../composables/useToggleState'
 
-let checked = useToggleState();
+const props = defineProps<{
+  init_state: boolean
+}>()
+
+onMounted(() => {
+  checked.setState(props.init_state)
+})
+let checked = useToggleState()
+const emit = defineEmits(['setStar'])
 
 function handleToggle(): void {
-  checked.toggleState();
+  checked.toggleState()
+  emit('setStar', checked.state.value)
 }
 </script>

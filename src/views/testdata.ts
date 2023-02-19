@@ -1,7 +1,7 @@
-import TasksData from '../interfaces/TasksData';
-import { v4 as uuidv4 } from 'uuid';
-import { TaskType } from '../interfaces/TasksData';
-import { ref } from 'vue';
+import TasksData from '../interfaces/TasksData'
+import { v4 as uuidv4 } from 'uuid'
+import { TaskType } from '../interfaces/TasksData'
+import { ref } from 'vue'
 
 export const tasks = ref<TasksData[] | null>([
   {
@@ -13,6 +13,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -23,6 +24,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -33,6 +35,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -43,6 +46,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -53,6 +57,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -63,6 +68,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -73,6 +79,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -83,6 +90,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -93,6 +101,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -103,6 +112,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -113,6 +123,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -123,6 +134,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -133,6 +145,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -143,6 +156,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -153,6 +167,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -163,6 +178,7 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
   {
     task_id: uuidv4(),
@@ -173,5 +189,6 @@ export const tasks = ref<TasksData[] | null>([
     urgency: 'high',
     type: TaskType.MyDay,
     checked: false,
+    starred: false,
   },
-]);
+])

@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import Authorize from './views/Authorize.vue';
-import Navbar from './components/Navbar.vue';
-import ViewBox from './views/viewBox.vue';
+import Authorize from './views/Authorize.vue'
+import Navbar from './components/Navbar.vue'
+import ViewBox from './views/viewBox.vue'
+import { storeToRefs } from 'pinia'
+import { onMounted } from 'vue'
+import useAppStore from './store/appStore'
+
+const { $tasks } = storeToRefs(useAppStore())
 </script>
 
 <template>
@@ -9,9 +14,7 @@ import ViewBox from './views/viewBox.vue';
     <!-- <Authorize /> -->
     <Navbar />
     <ViewBox>
-      <template #body>
-        <router-view />
-      </template>
+      <router-view />
     </ViewBox>
   </div>
 </template>
