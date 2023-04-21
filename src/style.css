@@ -1,9 +1,11 @@
 @import '../node_modules/primevue/resources/primevue.min.css';
-@import '../node_modules/primevue/resources/themes/lara-light-purple/theme.css';
+@import '../node_modules/primevue/resources/themes/md-light-deeppurple/theme.css';
 @import '../node_modules/primeicons/primeicons.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   html {
     font-family: Outfit, system-ui, sans-serif;
@@ -16,12 +18,16 @@
   }
 }
 
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0px;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-white rounded-md;
+  @apply bg-transparent rounded-md;
 }
 
 ::-webkit-scrollbar-thumb {

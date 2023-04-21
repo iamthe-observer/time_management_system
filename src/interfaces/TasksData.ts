@@ -6,14 +6,19 @@ export enum TaskType {
   Starred = 'Starred',
 }
 
+export interface FOLDER {
+  tasks: string[]
+  title: string
+  id: string
+}
+
 export default interface TasksData {
   body: string
   task_id: string | null
   urgency: 'high' | 'low'
-  status: boolean
   checked: boolean
-  init_date?: Date | null
-  done_date?: Date | undefined | null
+  date?: undefined | null | Date[]
   type: TaskType | null
+  user_folder?: FOLDER | string
   starred: boolean
 }

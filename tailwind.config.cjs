@@ -18,7 +18,7 @@ module.exports = {
         secTrans: '#00ffd080',
         light: '#FEFBF6',
         dark: '#3D3C42',
-        grey: '#f7f7f7',
+        grey: '#ededed',
         lightgrey: '#fafafa',
       },
     },
